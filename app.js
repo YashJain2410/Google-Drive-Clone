@@ -4,8 +4,8 @@ const userRouter = require('./routes/user.routes.js')
 const app = express();
 
 app.set('view engine', 'ejs')
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+app.use(express.json())                                   //Built in validator
+app.use(express.urlencoded({ extended: true }))           //Built in validator
 
 app.use('/user', userRouter)
 
