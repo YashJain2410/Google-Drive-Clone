@@ -4,12 +4,14 @@ const dotenv = require('dotenv');
 dotenv.config();
 const connectToDB = require('./config/db.js')
 connectToDB();
+const cookieParser = require('cookie-parser')
 
 const app = express();
 
 app.set('view engine', 'ejs')
 app.use(express.json())                                   //Built in validator
 app.use(express.urlencoded({ extended: true }))           //Built in validator
+app.use(cookieParser())
 
 app.use('/user', userRouter)
 
