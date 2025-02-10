@@ -46,6 +46,18 @@
             </button>
 
         </div>
+        <div class="files flex flex-col gap-2">
+            <% files.forEach((file) => { %>
+            <div class="p-2 cursor-pointer rounded-md bg-grey-300 flex justify-between">
+                <h1><%= file.originalname %></h1>
+                <a href="/download/<%= file.path %>" 
+                    class="text-blue-500 hover: text-blue-700"
+                    download="<%= file.originalname %>">
+                    <i class="ri-download-line"></i>
+                </a>
+            </div>
+            <% }) %>
+        </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.1/dist/flowbite.min.js"></script>
     <script>
